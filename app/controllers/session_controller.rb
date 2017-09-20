@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  # loggin in
+  # logging in
   def new
   end
 
@@ -10,7 +10,7 @@ class SessionController < ApplicationController
     password = params[:password]
 
     # find the user by their email
-    user = User.find_by(email :email)
+    user = User.find_by(email: email)
 
     # if we found a user and their password checks out
     if user && user.authenticate(password)

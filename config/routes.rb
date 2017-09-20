@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :questions
+
   get 'pages/welcome'
 
   root 'pages#welcome'
