@@ -22,6 +22,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'kaminari'
 # Pagination
 
+#question drop down
+gem 'redcarpet', '~> 3.0.0'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

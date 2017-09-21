@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   def show
     @question = Question.find(params[:id])
+    @answer = @question.answers.new
   end
 
   # GET /questions/new
@@ -24,6 +25,7 @@ class QuestionsController < ApplicationController
   # POST /questions
   def create
     @question = Question.new(question_params)
+    @question.user = current_user
 
     if @question.save
       redirect_to @question, notice: 'Question was successfully created.'
@@ -53,6 +55,6 @@ class QuestionsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def question_params
-    params.fetch(:question, {})
+    params.require(:question).permit(:body)
   end
 end
