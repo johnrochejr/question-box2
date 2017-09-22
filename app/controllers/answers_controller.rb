@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+
   def toggle
    # Find the question first
    @question = Question.find(params[:question_id])
